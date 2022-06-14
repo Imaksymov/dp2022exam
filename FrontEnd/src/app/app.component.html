@@ -1,0 +1,40 @@
+
+      <h1 class = "main">Table5</h1>
+      
+      <div class = "main">
+        <ul>
+            <li *ngFor="let table5 of itemsList" style="list-style-type: none" 
+            (click)="onSelect(table5)"
+            > <h4>{{table5.title7}}</h4>   <br> {{table5.age}}  <br>
+            <span (click)="deleteTable5(table5)" class = "but"> DELETE </span>
+            
+            </li>
+        </ul>
+      </div>
+
+
+    
+    
+      
+    <h1 class = "main">Add</h1>
+    <form #form1="ngForm" (ngSubmit)="addTable5(form1.value)" class = "main">
+        <input type="hidden"  name="id"  ngModel="-1"><br>
+        <input  type="text"  placeholder="Title" name="title7"  ngModel="">
+        <input  type="number"  placeholder="age" name="age" ngModel="">
+       
+      
+      <input  type="submit" value="Add">
+    </form>
+
+    
+    <div *ngIf="selectedItem">
+      
+    <h1 class = "main">Update</h1>
+    <form  #form2="ngForm" (ngSubmit)="updateTable5(form2.value)" class = "main">
+        <input  type="text"   placeholder="Title" name="title7"  ngModel="{{selectedItem.title7}}">
+        <input  type="number"  placeholder="age"  name="age" ngModel="{{selectedItem.age}}">
+      
+        <input  type="hidden"  name="link" ngModel="{{selectedItem.link}}">
+        <input  type="submit"  value="Update">
+    </form> 
+    </div>
