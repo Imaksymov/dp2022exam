@@ -1,0 +1,5 @@
+create database exam2022;
+create user user7 with password '113';
+grant all on database exam2022 to user7;
+\c exam2022 user7;
+CREATE TABLE "table5" ("id" serial PRIMARY KEY,"title7" string, "age" short);
